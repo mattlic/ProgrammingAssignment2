@@ -1,5 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Programming assignment to create a simple cache function that wraps finding 
+## the inverse of a matrix
+##  Uses R solve function to find the inverse matrix
+##
+## Matt Licholai (mattlic@outlook.com)  
+##      April 2014
+
 
 ## makeCacheMatrix: This function creates a special "matrix" object 
 ##   that can cache its inverse.
@@ -24,8 +29,8 @@ makeCacheMatrix <- function(xMatrixX = matrix()) {
 
 ## cacheSolve: This function computes the inverse of the special "matrix" 
 ##   returned by makeCacheMatrix above. If the inverse has already been 
-##   calculated (and the matrix has not changed), then the cachesolve should 
-##   retrieve the inverse from the cache.
+##   calculated (and the matrix has not changed), then the cachesolve  
+##   retrieves the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -41,7 +46,8 @@ cacheSolve <- function(x, ...) {
 }
 
 
-testCacheInverse <- function() {
+## simple unit tests
+testCacheSolve <- function() {
     hilbert <- function(n) { i <- 1:n; 1 / outer(i - 1, i, "+") }
     h8 <- hilbert(8); h8
     sh8 = solve(h8)
